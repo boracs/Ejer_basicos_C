@@ -8,40 +8,79 @@ main() {
 	SetConsoleCP(1252);
 	SetConsoleOutputCP(1252);
 
-	/*
-	Escribir un programa que pida Edad(int) hasta introducir 0 y sexo(char).Donde si se
-		introduce ‘h’ en sexo será hombre y ‘m’ mujer, validar que solo se introduzcan estos
-		caracteres.Al final mostrar los siguientes datos.
-		Edad de la persona más joven.
-		Edad de la más vieja.
-		Hombres que dieron su edad.
-		Mujeres que dieron su edad.
-
+	/* 1) Escribir un programa en C que lea números por teclado hasta que se introduzca el 0.
+	Acumule los pares elevados al cuadrado en una variable y en otra multiplicados por 2 los
+	impares.
 	*/
+	/*
+	
+	int num;
+
+	printf("dame un numero");
+	scanf_s("%d", &num);
+	int cuadrado = 0;
+	int multiplcidadoPorDos = 0;
+
+	while (num != 0) {
+
+		if (num % 2 == 0) {
+			 cuadrado += num * num;
+			printf("El cuarado es: %d \n", cuadrado);
+		}
+		else {
+			 multiplcidadoPorDos += num * 2;
+			printf("El multiplo por 2  es: %d  \n", multiplcidadoPorDos);
+		}
 
 
-	printf("Hola");
-
-	int edadMax = 0;
-	int edadMin = 200;
-	int contH = 0;
-	int contM = 0;
-
-	printf("dame tu edad");
-	int edad;
-	scanf_s("%d", &edad);
-
-	while (edad != 0) {
-
-
-
-
-	printf("dame tu edad");
-	int edad;
-	scanf_s("%d", &edad);
+	printf("dame un numero");
+	scanf_s("%d", &num);
 
 	}
-	printf("Sew finalizo el programa");
+	
+	*/
+	//-----------------------------------------------------------------------
+
+
+	/*2) Escribir un programa que haga lo siguiente:
+		i) Pedir un número n1
+		ii) Pedir 20 números (n2).
+		iii) De los 20 números mostrar: cuántas veces n1 fue igual a n2, cuál de los 20
+		números fue el mayor.
+		iv) Preguntar si se desea repetir y volver a 1 en caso afirmativo.
+	*/
+
+	char resp = " ";
+	do {
+		printf("Dame un numeorPrincipal\n");
+		int numPrincip;
+		scanf_s("%d", &numPrincip);
+		
+		int numMax = 0;
+		int contRepetidos = 0;
+
+		for (int i = 0; i < 3; i++) {
+			printf("Dame un numero secundario\n");
+			int num;
+			scanf_s("%d", &num);
+
+			if (num > numMax) {
+				numMax = num;
+			}
+			if (num == numPrincip) {
+				contRepetidos++;
+			}
+		}
+
+		printf("numeor maxmo : %d , cantidades repetidas el numeroPrincip: %d \n", numMax, contRepetidos);
+
+		printf("Desea continuar?");
+		resp = getche();
+
+
+	} while (resp == 's' || resp == 'S');
+
+
 
 
 
